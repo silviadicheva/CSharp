@@ -1,0 +1,10 @@
+D:\C#\SisBase\SisBase\bin\Debug\SisBase.exe.config
+D:\C#\SisBase\SisBase\bin\Debug\SisBase.exe
+D:\C#\SisBase\SisBase\bin\Debug\SisBase.pdb
+D:\C#\SisBase\SisBase\obj\Debug\SisBase.csprojResolveAssemblyReference.cache
+D:\C#\SisBase\SisBase\obj\Debug\SisBase.exe
+D:\C#\SisBase\SisBase\obj\Debug\SisBase.pdb
+D:\C#\SisBase\SisBase\bin\Debug\EntityFramework.dll
+D:\C#\SisBase\SisBase\bin\Debug\EntityFramework.SqlServer.dll
+D:\C#\SisBase\SisBase\bin\Debug\EntityFramework.xml
+D:\C#\SisBase\SisBase\bin\Debug\EntityFramework.SqlServer.xml

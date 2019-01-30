@@ -1,0 +1,6 @@
+D:\C#\StudyHall\StudyHall\bin\Debug\StudyHall.exe.config
+D:\C#\StudyHall\StudyHall\bin\Debug\StudyHall.exe
+D:\C#\StudyHall\StudyHall\bin\Debug\StudyHall.pdb
+D:\C#\StudyHall\StudyHall\obj\Debug\StudyHall.csprojResolveAssemblyReference.cache
+D:\C#\StudyHall\StudyHall\obj\Debug\StudyHall.exe
+D:\C#\StudyHall\StudyHall\obj\Debug\StudyHall.pdb

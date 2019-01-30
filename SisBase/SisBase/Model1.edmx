@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="CategroiesSet" EntityType="Model1.Store.CategroiesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductsSet" EntityType="Model1.Store.ProductsSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CategroiesProducts" Association="Model1.Store.CategroiesProducts">
+      <End Role="Categroies" EntitySet="CategroiesSet" />
+      <End Role="Products" EntitySet="ProductsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CategroiesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriesName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoriesID" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductsName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductsID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategroiesId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CategroiesProducts">
+    <End Role="Categroies" Type="Model1.Store.CategroiesSet" Multiplicity="1" />
+    <End Role="Products" Type="Model1.Store.ProductsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categroies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategroiesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategroiesSet" EntityType="Model1.Categroies" />
+          <EntitySet Name="ProductsSet" EntityType="Model1.Products" />
+          <AssociationSet Name="CategroiesProducts" Association="Model1.CategroiesProducts">
+            <End Role="Categroies" EntitySet="CategroiesSet" />
+            <End Role="Products" EntitySet="ProductsSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categroies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoriesName" Type="String" Nullable="false" />
+          <Property Name="CategoriesID" Type="String" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Model1.CategroiesProducts" FromRole="Categroies" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductsName" Type="String" Nullable="false" />
+          <Property Name="ProductsID" Type="String" Nullable="false" />
+          <NavigationProperty Name="Categroies" Relationship="Model1.CategroiesProducts" FromRole="Products" ToRole="Categroies" />
+          <Property Name="CategroiesId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="CategroiesProducts">
+          <End Type="Model1.Categroies" Role="Categroies" Multiplicity="1" />
+          <End Type="Model1.Products" Role="Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categroies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategroiesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="CategroiesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Categroies)">
+        <MappingFragment StoreEntitySet="CategroiesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoriesName" ColumnName="CategoriesName" />
+          <ScalarProperty Name="CategoriesID" ColumnName="CategoriesID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Products)">
+        <MappingFragment StoreEntitySet="ProductsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductsName" ColumnName="ProductsName" />
+          <ScalarProperty Name="ProductsID" ColumnName="ProductsID" />
+          <ScalarProperty Name="CategroiesId" ColumnName="CategroiesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,5 @@
+D:\Project\c#\IBANvalidation\IBANvalidation\bin\Debug\IBANvalidation.exe.config
+D:\Project\c#\IBANvalidation\IBANvalidation\bin\Debug\IBANvalidation.exe
+D:\Project\c#\IBANvalidation\IBANvalidation\bin\Debug\IBANvalidation.pdb
+D:\Project\c#\IBANvalidation\IBANvalidation\obj\Debug\IBANvalidation.exe
+D:\Project\c#\IBANvalidation\IBANvalidation\obj\Debug\IBANvalidation.pdb

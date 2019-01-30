@@ -1,0 +1,6 @@
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\bin\Debug\Elevator.exe.config
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\bin\Debug\Elevator.exe
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\bin\Debug\Elevator.pdb
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\obj\Debug\Elevator.csprojResolveAssemblyReference.cache
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\obj\Debug\Elevator.exe
+C:\Users\Silvia\Desktop\Elevator\Elevator\Elevator\obj\Debug\Elevator.pdb

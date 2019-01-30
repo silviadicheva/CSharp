@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="CategroiesSet" EntityType="Model1.Store.CategroiesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductsSet" EntityType="Model1.Store.ProductsSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CategroiesProducts" Association="Model1.Store.CategroiesProducts">
+      <End Role="Categroies" EntitySet="CategroiesSet" />
+      <End Role="Products" EntitySet="ProductsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CategroiesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriesName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoriesID" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductsName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductsID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategroiesId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CategroiesProducts">
+    <End Role="Categroies" Type="Model1.Store.CategroiesSet" Multiplicity="1" />
+    <End Role="Products" Type="Model1.Store.ProductsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categroies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategroiesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
